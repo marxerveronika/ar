@@ -20,7 +20,10 @@
   
   <source src="assets/asset.mp3" type="audio/mpeg">
 </audio>-->
-
+<a-assets>
+            <audio id="sound" src="assets/asset.mp3" preload="auto"></audio>
+        </a-assets>
+            
             <a-marker
                 id="animated-marker"
                 type="pattern"
@@ -33,14 +36,30 @@
             >
                 <a-image
                     src="assets/asset.png"
-                    scale="20 20 20"
+                    scale="16 16 16"
                     class="clickable"
                     rotation="-90 0 0"
                     gesture-handler
                 ></a-image>
             </a-marker>
-
+            
+<a-entity sound="src: #sound" autoplay="false"></a-entity>
             <a-entity camera></a-entity>
         </a-scene>
+        
+        <script>
+AFRAME.registerComponent('soundhandler', {
+    tick: function () {
+           var entity = document.querySelector('[sound]');
+         if (document.querySelector('a-marker').object3D.visible == true) {
+            entity.components.sound.playSound();
+        } else {
+            entity.components.sound.pauseSound();
+        }
+
+     }
+});
+</script>
+        
     </body>
 </html>
