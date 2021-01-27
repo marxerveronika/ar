@@ -6,7 +6,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         
-              <script>
+             <!-- <script>
 AFRAME.registerComponent('soundhandler', {
     tick: function () {
            var entity = document.querySelector('[sound]');
@@ -18,7 +18,7 @@ AFRAME.registerComponent('soundhandler', {
 
      }
 });
-</script> 
+</script> -->
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -30,10 +30,7 @@ AFRAME.registerComponent('soundhandler', {
             embedded
             gesture-detector
         >
-            <!--<audio controls>
-  
-  <source src="assets/asset.mp3" type="audio/mpeg">
-</audio>-->
+           
 <a-assets>
             <audio id="sound" src="assets/asset.mp3" preload="auto"></audio>
         </a-assets>
@@ -57,7 +54,13 @@ AFRAME.registerComponent('soundhandler', {
                 ></a-image>
             </a-marker>
             
-<a-entity sound="src: #sound" autoplay="false"></a-entity>
+             <!--
+<audio controls autoplay>  
+        
+        <source src="assets/asset.mp3" type="audio/mpeg">  
+    </audio>  -->
+            
+<a-entity sound="src: #sound" autoplay="true"></a-entity>
             <a-entity camera></a-entity>
         </a-scene>
         
