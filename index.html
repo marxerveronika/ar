@@ -53,13 +53,12 @@ AFRAME.registerComponent('soundhandler', {
                     gesture-handler
                 ></a-image>
             </a-marker>
-           
-            <div id="player">
-    <audio controls autoplay hidden>
-     <source src="assets/asset" type="audio/mpeg">
-                unsupported !! 
-    </audio>.mp3
-</div>
+          
+            <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+            <audio id="player" autoplay loop>
+    <source src="assets/asset.mp3" type="audio/mp3">
+</audio>
+            
             
 <!-- <audio controls autoplay>  
          <source src="assets/asset.ogg" type="audio/ogg">
